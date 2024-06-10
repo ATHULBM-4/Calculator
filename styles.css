@@ -1,0 +1,225 @@
+body {
+    background-color: #f7f7f7;
+    font-family: 'Fjalla One', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 320px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tittle {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+#historybutton {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.calculator {
+    margin-top: 20px;
+}
+
+input[name="screen"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+button:active {
+    background-color: #d0d0d0;
+}
+
+button[onclick="clearAll()"], button[onclick="deleteLastEntry()"] {
+    background-color: #ff7675;
+    color: white;
+}
+
+button[onclick="clearAll()"]:hover, button[onclick="deleteLastEntry()"]:hover {
+    background-color: #ff6b6b;
+}
+
+button[onclick="clearAll()"]:active, button[onclick="deleteLastEntry()"]:active {
+    background-color: #ff5252;
+}
+
+button[style="background-color: #25db72; font-weight: bold; color: #ecf0f1;"] {
+    background-color: #2ecc71;
+    color: white;
+}
+
+button[style="background-color: #25db72; font-weight: bold; color: #ecf0f1;"]:hover {
+    background-color: #27ae60;
+}
+
+button[style="background-color: #25db72; font-weight: bold; color: #ecf0f1;"]:active {
+    background-color: #1e8449;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col {
+    width: 48%;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #444;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode input[name="screen"] {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode button {
+    background-color: #666;
+    color: #fff;
+}
+
+.dark-mode button:hover {
+    background-color: #777;
+}
+
+.dark-mode button:active {
+    background-color: #888;
+}
+
+.dark-mode button[onclick="clearAll()"], .dark-mode button[onclick="deleteLastEntry()"] {
+    background-color: #e74c3c;
+}
+
+.dark-mode button[onclick="clearAll()"]:hover, .dark-mode button[onclick="deleteLastEntry()"]:hover {
+    background-color: #c0392b;
+}
+
+.dark-mode button[onclick="clearAll()"]:active, .dark-mode button[onclick="deleteLastEntry()"]:active {
+    background-color: #a93226;
+}
+
+.dark-mode button[style="background-color: #25db72; font-weight: bold; color: #ecf0f1;"] {
+    background-color: #27ae60;
+}
+
+.dark-mode button[style="background-color: #25db72; font-weight: bold; color: #ecf0f1;"]:hover {
+    background-color: #229954;
+}
+
+.dark-mode button[style="background-color: #25db72; font-weight: bold; color: #ecf0f1;"]:active {
+    background-color: #1e8449;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: #2196F3;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(14px);
+}
+
+#turn {
+    display: none;
+}
